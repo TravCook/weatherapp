@@ -11,20 +11,19 @@
 //  THEN I am again presented with current and future conditions for that city
 // WHEN I open the weather dashboard
 //  THEN I am presented with the last searched city forecast
-
+var city
 
 $("#searchBox").on("click", function(event){  //this handles the entire search of the city
   event.preventDefault();
-  var city = (event.target.parentElement[0].value);
+  city = (event.target.parentElement[0].value);
 var apiKey = "166a433c57516f51dfab1f7edaed8413"
 $.ajax({ //this calls for the single day forcast
   url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey,
   method: "GET"
 }).then(function(response){
-  console.log(response)
-
-var lon = (response.coord.lon)
-var lat = (response.coord.lat)
+    console.log(response)
+    var lon = (response.coord.lon)
+    var lat = (response.coord.lat)
 $.ajax({ //this calls for the 5 day forecast
   url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minute,hourly,alerts&appid=" + apiKey,
 }).then(function(response){
@@ -36,4 +35,15 @@ $.ajax({ //this calls for the 5 day forecast
   console.log(humanDateFormat)
 })
 });
+renderpreviouslySearched()
 });
+
+function renderpreviouslySearched(){
+  var lastSearchedButton = $("<button>");
+  lastSearchedButton.addClass("btn-primary lastsearchedButton")
+  lastSearchedButton.text(city)
+  $("#lastSearched").append(lastSearchedButton)
+}
+function renderWeatherinfo(){
+  
+}

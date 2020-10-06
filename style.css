@@ -1,34 +1,75 @@
-.outline{
+/* .outline{
   outline: 1px solid gray;
   padding: 8px;
   text-align: center;
-}
+} */
 .mini-container{
   height: 100%;
   width: 30%;
   float: left;
+  padding: 8px;
+  text-align: center;
 }
 .main-info{
   width: 70%;
   float: right;
   height: 100%;
+  padding: 8px;
+  text-align: center;
 }
 .day{
   width: 20%;
+  padding: 8px;
+  text-align: center;
 }
 .row1{
   height: 600px;
+  padding: 8px;
+  text-align: center;
 }
 .row2{
   height: 200px;
+  padding: 8px;
+  text-align: center;
 }
 .search{
   height: 30%;
+  padding: 8px;
+  text-align: center;
 }
 .weatherIcon{
   height: 70%;
+  padding: 8px;
+  text-align: center;
 }
 .day{
   float: left;
   height: 100%;
+  padding: 8px;
+  text-align: center;
+}
+.searchBox{
+  height: 100%;
+  padding: 8px;
+  text-align: center;
+}
+.searchText{
+  height: 33%;
+  padding: 8px;
+  text-align: center;
+}
+.searchButton{
+  height: 33%;
+  float: bottom;
+  padding: 8px;
+  text-align: center;
+}
+.searchLabel{
+  height: 33%;
+  padding: 8px;
+  text-align: center;
+}
+.lastsearchedButton{
+  width: 100%;
+  height: 40px;
 }

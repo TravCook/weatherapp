@@ -13,12 +13,13 @@
     <div class = "row1 outline col-12">
       <div class = "mini-container outline">
         <div class = "search outline ">
-          <form>
-            <textarea for="searchBox"></textarea>
-            <input type="submit" id="searchBox"></input>
+          <form id="searchBox" class = "searchBox">
+            <label for="searchBox" class = "searchLabel">Please enter a City</label>
+            <input type="text" id="city-input" class = "searchText"><br>
+            <input id="searchBox" type="submit" value="City Search" class = "searchButton">
           </form>
         </div>
-        <div class = "searchHistory outline"></div>
+        <div class = "searchHistory outline" id = "lastSearched"></div>
       </div>
       <div class = "main-info outline"></div>
     </div>
