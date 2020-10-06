@@ -1,0 +1,34 @@
+.outline{
+  outline: 1px solid gray;
+  padding: 8px;
+  text-align: center;
+}
+.mini-container{
+  height: 100%;
+  width: 30%;
+  float: left;
+}
+.main-info{
+  width: 70%;
+  float: right;
+  height: 100%;
+}
+.day{
+  width: 20%;
+}
+.row1{
+  height: 600px;
+}
+.row2{
+  height: 200px;
+}
+.search{
+  height: 30%;
+}
+.weatherIcon{
+  height: 70%;
+}
+.day{
+  float: left;
+  height: 100%;
+}
