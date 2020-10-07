@@ -7,6 +7,9 @@
   background-image: url("Assets/Cloudbackground.jpeg");
   
 } */
+body{
+  background-color: #34465d;
+}
 .weatherSymbol{
   
   
@@ -46,7 +49,7 @@
   height: 30%;
   padding: 8px;
   text-align: center;
-  background-color: #34465d;
+  
 
 }
 .weatherIcon{
@@ -55,6 +58,7 @@
   text-align: center;
 }
 .day{
+  color: black;
   float: left;
   height: 100%;
   padding: 8px;
@@ -107,26 +111,31 @@
   word-wrap: normal;
 }
 .wind{
+  color: black;
   font-size: 50px;
   word-wrap: normal;
   text-align: center;
 }
 .feelsLike{
+  color: black;
   font-size: 50px;
   word-wrap: normal;
   text-align: center;
 }
 .tempHigh{
+  color: black;
   font-size: 50px;
   word-wrap: normal;
   text-align: center;
 }
 .tempLow{
+  color: black;
   font-size: 50px;
   word-wrap: normal;
   text-align: center;
 }
 .humidity{
+  color: black;
   font-size: 50px;
   word-wrap: normal;
   text-align: center;
@@ -142,8 +151,35 @@
   text-align: center;
 }
 .label{
+  color: black;
   font-size: 20px;
   text-align: center;
   word-wrap: normal;
   
+}
+.windChill{
+  color: black;
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.uvIndx{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.low{
+  color: #3ea72d;
+}
+.moderate{
+  color: #fff300;
+}
+.high{
+  color: #f18b00;
+}
+.veryHigh{
+  color: #e53210;
+}
+.extreme{
+  color: #b567a4;
 }

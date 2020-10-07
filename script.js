@@ -1,7 +1,11 @@
 var dataF
+var uvIndx
+var lat
+var lon
 var city
 var temp
 var windSpeed
+var windchill
 var feelsLike
 var tempHigh
 var symbol
@@ -13,17 +17,16 @@ var humanSunrise
 var humanSunset
 var weatherSymbol
 var fivedayData = []
-
-$(".searchButton").on("click", function(event){  //this handles the entire search of the city
-  event.preventDefault();
-  city = (event.target.parentElement[0].value);
 var apiKey = "166a433c57516f51dfab1f7edaed8413"
+pageload()
+function pageload(){
+city = localStorage.getItem("city")
 $.ajax({ //this calls for the single day forcast
   url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey,
   method: "GET"
 }).then(function(response){
-    var lon = (response.coord.lon)
-    var lat = (response.coord.lat)
+     lon = (response.coord.lon)
+     lat = (response.coord.lat)
     weatherSymbol = (response.weather[0].icon)
     temp = (response.main.temp)
     windSpeed = (response.wind.speed)
@@ -41,19 +44,51 @@ $.ajax({ //this calls for the single day forcast
     var sunsetObject = new Date(sunsetmilli);
      humanSunset = sunsetObject.toLocaleString();
     renderWeatherinfo();
+})
+}
+$(".searchButton").on("click", function(event){  //this handles the entire search of the city
+  event.preventDefault();
+  city = (event.target.parentElement[0].value);
+$.ajax({ //this calls for the single day forcast
+  url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey,
+  method: "GET"
+}).then(function(response){
+  console.log(response)
+     lon = (response.coord.lon)
+     lat = (response.coord.lat)
+    weatherSymbol = (response.weather[0].icon)
+    temp = (response.main.temp)
+    windSpeed = (response.wind.speed)
+    feelsLike = (response.main.feels_like)
+    tempHigh = (response.main.temp_max)
+    symbol = (response.weather.main)
+    tempLow = (response.main.temp_min)
+    humidity = (response.main.humidity)
+    var sunrisemilli = (sunrise*1000);
+    var sunriseObject = new Date(sunrisemilli);
+     humanSunrise = sunriseObject.toLocaleString();
+    var sunsetmilli = (sunset*1000);
+    var sunsetObject = new Date(sunsetmilli);
+     humanSunset = sunsetObject.toLocaleString();
+    renderWeatherinfo();
+    localStorage.setItem("city", city)
+})
 $.ajax({ //this calls for the 5 day forecast
   url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minute,hourly,alerts&appid=" + apiKey,
 }).then(function(response){
+  uvIndx = (response.daily[0].uvi)
   for(i=1;i<6;i++){
   var day = (response.daily[i])
   fivedayData.push(day)
   }
   fivedayForecast();
+  renderWeatherinfo();
 })
 });
+
 // renderpreviouslySearched();
 
-});
+
 
 function dateConverter(data){
   var datemilli = (data*1000);
@@ -82,6 +117,28 @@ function renderWeatherinfo(event){
   $("#sunrise").text(humanSunrise)
   $("#sunset").text(humanSunset)
   $("#weatherSymbol").attr("src", "http://openweathermap.org/img/w/" + weatherSymbol + ".png");
+  windChillMath(temp)
+  $("#windChill").text(windchillfinal.toFixed(2) + "°")
+  $("#uvIndx").text(uvIndx)
+  if(uvIndx <= 2.99 ){
+    $("#uvIndx").addClass("low")
+  }else if (uvIndx >=3.99 && uvIndx <= 5.99){
+    $("#uvIndx").addClass("moderate")
+  }else if (uvIndx >=6.99 && uvIndx <= 7.99){
+    $("#uvIndx").addClass("high")
+  }else if (uvIndx >=8.99 && uvIndx <= 10.99){
+    $("#uvIndx").addClass("veryHigh")
+  }else if (uvIndx >= 11){
+    $("#uvIndx").addClass("extreme")
+  }else{
+    console.log("UV index too high")
+  }
+}
+function windChillMath(data){
+   var tempWind = tempConverter(data)
+   windchill = (tempWind - (windSpeed*.07))
+   windchillfinal = tempWind - windchill
+   return windchillfinal
 }
 function tempConverter(data){
   dataF = (data - 273.15) * 1.80 + 32
