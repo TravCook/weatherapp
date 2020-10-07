@@ -11,25 +11,88 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <div class = "container-fluid outline">
     <div class = "row1 outline col-12">
-      <div class = "mini-container outline">
-        <div class = "search outline ">
-          <form id="searchBox" class = "searchBox">
-            <label for="searchBox" class = "searchLabel">Please enter a City</label>
-            <input type="text" id="city-input" class = "searchText"><br>
-            <input id="searchBox" type="submit" value="City Search" class = "searchButton">
-          </form>
+      <div class = "main-info grid-container">
+        <div class = "item1">
+          <div class = "temp" id = "temp"></div>
+          <label class = "label">Current Temp</label>
         </div>
-        <div class = "searchHistory outline" id = "lastSearched"></div>
+        <div class = "item2">
+          <div class = "wind" id ="wind"></div>
+          <label class = "label">Wind Speed</label>
+        </div>
+        <div class = "item3">
+          <div class = "feelsLike" id="feelsLike"></div>
+          <label class = "label">Feels Like</label>
+        </div>
+        <div class = "item4">
+          <div class = "tempHigh" id="tempHigh"></div>
+          <label class = "label">Today's High</label>
+        </div>
+        <div class = "item5 symbol">
+          <img class = "weatherSymbol" id = "weatherSymbol">
+          <label class = "label">Current Weather</label>
+        </div>
+        <div class = "item6">
+          <div class = "tempLow" id = "tempLow"></div>
+          <label class = "label">Today's Low</label>
+        </div>
+        <div class = "item7">
+          <div class = "humidity" id="humidity"></div>
+          <label class = "label">Humidity</label>
+        </div>
+        <div class = "item8">
+          <div class = "windChill" id="windChill"></div>
+          <label class = "label">Wind Chill</label>
+        </div>
+        <div class = "item9">
+          <div class = "uvIndx" id="uvIndx"></div>
+          <label class = "label">UV Index</label>
+        </div>
       </div>
-      <div class = "main-info outline"></div>
     </div>
     <div class = "row2 outline col-12">
-      <div class = "day day1 outline"></div>
-      <div class = "day day2 outline"></div>
-      <div class = "day day3 outline"></div>
-      <div class = "day day4 outline"></div>
-      <div class = "day day5 outline"></div>
+      <div class = "day day1 outline">
+        <div id = "day1date"></div>
+        <img id = "day1symbol">
+        <div id = "day1temp"></div>
+        <div id = "day1humid"></div>
+      </div>
+      <div class = "day day2 outline">
+        <div id = "day2date"></div>
+        <img id = "day2symbol">
+        <div id = "day2temp"></div>
+        <div id = "day2humid"></div>
+      </div>
+      <div class = "day day3 outline">
+        <div id = "day3date"></div>
+        <img id = "day3symbol">
+        <div id = "day3temp"></div>
+        <div id = "day3humid"></div>
+      </div>
+      <div class = "day day4 outline">
+        <div id = "day4date"></div>
+        <img id = "day4symbol">>
+        <div id = "day4temp"></div>
+        <div id = "day4humid"></div>
+      </div>
+      <div class = "day day5 outline">
+        <div id = "day5date"></div>
+        <img id = "day5symbol">
+        <div id = "day5temp"></div>
+        <div id = "day5humid"></div>
+      </div>
     </div>
+    
+    <div class = "search outline">
+      <form id="searchBox" class = "searchBox col-9">
+        <label for="searchBox" class = "searchLabel">Please enter a City</label>
+        <input type="text" id="city-input" class = "searchText"><br>
+        <input id="searchBox" type="submit" value="City Search" class = "searchButton">
+      </form>
+      <div class = "searchHistory col-3" id = "lastSearched"></div> -->
+    </div>
+  </div>
+  
   </div>
 <script src = "script.js"></script>
 

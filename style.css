@@ -3,16 +3,26 @@
   padding: 8px;
   text-align: center;
 } */
+/* .container-fluid{
+  background-image: url("Assets/Cloudbackground.jpeg");
+  
+} */
+.weatherSymbol{
+  
+  
+  width: 200px;
+  height: 200px;
+}
 .mini-container{
   height: 100%;
-  width: 30%;
+  width: 100%;
   float: left;
   padding: 8px;
   text-align: center;
 }
 .main-info{
-  width: 70%;
-  float: right;
+  width: 100%;
+  float: center;
   height: 100%;
   padding: 8px;
   text-align: center;
@@ -36,6 +46,8 @@
   height: 30%;
   padding: 8px;
   text-align: center;
+  background-color: #34465d;
+
 }
 .weatherIcon{
   height: 70%;
@@ -56,7 +68,8 @@
 .searchText{
   height: 33%;
   padding: 8px;
-  text-align: center;
+  text-align: center;  
+
 }
 .searchButton{
   height: 33%;
@@ -65,11 +78,72 @@
   text-align: center;
 }
 .searchLabel{
-  height: 33%;
+
   padding: 8px;
   text-align: center;
+  color: floralwhite;
 }
-.lastsearchedButton{
+/* .lastsearchedButton{
   width: 100%;
   height: 40px;
+  float: left;
+} */
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0px;
+  grid-auto-rows: 1fr;
+}
+.temp{
+  color: black;
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.tempText{
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  word-wrap: normal;
+}
+.wind{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.feelsLike{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.tempHigh{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.tempLow{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.humidity{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.sunrise{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.sunset{
+  font-size: 50px;
+  word-wrap: normal;
+  text-align: center;
+}
+.label{
+  font-size: 20px;
+  text-align: center;
+  word-wrap: normal;
+  
 }
